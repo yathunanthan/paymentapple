@@ -1,23 +1,26 @@
 import { Component } from '@angular/core';
 import * as i0 from "@angular/core";
-import * as i1 from "./payment-details/payment-details.component";
 export class ParentpaymentComponent {
     constructor() { }
     ngOnInit() {
     }
 }
-ParentpaymentComponent.ɵfac = function ParentpaymentComponent_Factory(t) { return new (t || ParentpaymentComponent)(); };
-ParentpaymentComponent.ɵcmp = i0.ɵɵdefineComponent({ type: ParentpaymentComponent, selectors: [["lib-parentpayment"]], decls: 1, vars: 0, template: function ParentpaymentComponent_Template(rf, ctx) { if (rf & 1) {
-        i0.ɵɵelement(0, "lib-payment-details");
-    } }, directives: [i1.PaymentDetailsComponent], encapsulation: 2 });
-(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ParentpaymentComponent, [{
-        type: Component,
-        args: [{
-                selector: 'lib-parentpayment',
-                template: `
-  <lib-payment-details></lib-payment-details>
+ParentpaymentComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0, type: ParentpaymentComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
+ParentpaymentComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.17", type: ParentpaymentComponent, selector: "lib-parentpayment", ngImport: i0, template: `
+    <p>
+      parentpayment works!
+    </p>
+  `, isInline: true });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0, type: ParentpaymentComponent, decorators: [{
+            type: Component,
+            args: [{
+                    selector: 'lib-parentpayment',
+                    template: `
+    <p>
+      parentpayment works!
+    </p>
   `,
-                styles: []
-            }]
-    }], function () { return []; }, null); })();
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFyZW50cGF5bWVudC5jb21wb25lbnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9wcm9qZWN0cy9wYXJlbnRwYXltZW50L3NyYy9saWIvcGFyZW50cGF5bWVudC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxNQUFNLGVBQWUsQ0FBQzs7O0FBVWxELE1BQU0sT0FBTyxzQkFBc0I7SUFFakMsZ0JBQWdCLENBQUM7SUFFakIsUUFBUTtJQUNSLENBQUM7OzRGQUxVLHNCQUFzQjsyREFBdEIsc0JBQXNCO1FBTGpDLHNDQUEyQzs7dUZBS2hDLHNCQUFzQjtjQVJsQyxTQUFTO2VBQUM7Z0JBQ1QsUUFBUSxFQUFFLG1CQUFtQjtnQkFDN0IsUUFBUSxFQUFFOztHQUVUO2dCQUNELE1BQU0sRUFBRSxFQUNQO2FBQ0YiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQsIE9uSW5pdCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdsaWItcGFyZW50cGF5bWVudCcsXG4gIHRlbXBsYXRlOiBgXG4gIDxsaWItcGF5bWVudC1kZXRhaWxzPjwvbGliLXBheW1lbnQtZGV0YWlscz5cbiAgYCxcbiAgc3R5bGVzOiBbXG4gIF1cbn0pXG5leHBvcnQgY2xhc3MgUGFyZW50cGF5bWVudENvbXBvbmVudCBpbXBsZW1lbnRzIE9uSW5pdCB7XG5cbiAgY29uc3RydWN0b3IoKSB7IH1cblxuICBuZ09uSW5pdCgpOiB2b2lkIHtcbiAgfVxuXG59XG4iXX0=
+                    styles: []
+                }]
+        }], ctorParameters: function () { return []; } });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFyZW50cGF5bWVudC5jb21wb25lbnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9wcm9qZWN0cy9wYXJlbnRwYXltZW50L3NyYy9saWIvcGFyZW50cGF5bWVudC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxNQUFNLGVBQWUsQ0FBQzs7QUFZbEQsTUFBTSxPQUFPLHNCQUFzQjtJQUVqQyxnQkFBZ0IsQ0FBQztJQUVqQixRQUFRO0lBQ1IsQ0FBQzs7b0hBTFUsc0JBQXNCO3dHQUF0QixzQkFBc0IseURBUnZCOzs7O0dBSVQ7NEZBSVUsc0JBQXNCO2tCQVZsQyxTQUFTO21CQUFDO29CQUNULFFBQVEsRUFBRSxtQkFBbUI7b0JBQzdCLFFBQVEsRUFBRTs7OztHQUlUO29CQUNELE1BQU0sRUFBRSxFQUNQO2lCQUNGIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tcG9uZW50LCBPbkluaXQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcblxuQENvbXBvbmVudCh7XG4gIHNlbGVjdG9yOiAnbGliLXBhcmVudHBheW1lbnQnLFxuICB0ZW1wbGF0ZTogYFxuICAgIDxwPlxuICAgICAgcGFyZW50cGF5bWVudCB3b3JrcyFcbiAgICA8L3A+XG4gIGAsXG4gIHN0eWxlczogW1xuICBdXG59KVxuZXhwb3J0IGNsYXNzIFBhcmVudHBheW1lbnRDb21wb25lbnQgaW1wbGVtZW50cyBPbkluaXQge1xuXG4gIGNvbnN0cnVjdG9yKCkgeyB9XG5cbiAgbmdPbkluaXQoKTogdm9pZCB7XG4gIH1cblxufVxuIl19

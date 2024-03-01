@@ -12,8 +12,6 @@ export declare class PaymentDetailsComponent implements OnInit {
     payEmitter: EventEmitter<any>;
     constructor();
     ngOnInit(): void;
-    canWalletPay(): void;
-    paymentSelected(value: any): void;
     static ɵfac: i0.ɵɵFactoryDef<PaymentDetailsComponent, never>;
     static ɵcmp: i0.ɵɵComponentDefWithMeta<PaymentDetailsComponent, "lib-payment-details", never, {}, { "emitter": "emitter"; "payEmitter": "payEmitter"; }, never, never>;
 }

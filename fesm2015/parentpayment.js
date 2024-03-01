@@ -1,5 +1,4 @@
-import { ɵɵdefineInjectable, ɵsetClassMetadata, Injectable, ɵɵgetCurrentView, ɵɵelementStart, ɵɵlistener, ɵɵrestoreView, ɵɵnextContext, ɵɵelement, ɵɵtext, ɵɵelementEnd, EventEmitter, ɵɵdefineComponent, ɵɵtemplate, ɵɵadvance, ɵɵtextInterpolate, ɵɵproperty, Component, Output, ɵɵdefineNgModule, ɵɵdefineInjector, ɵɵsetNgModuleScope, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { __awaiter } from 'tslib';
+import { ɵɵdefineInjectable, ɵsetClassMetadata, Injectable, EventEmitter, ɵɵdefineComponent, ɵɵelementStart, ɵɵtext, ɵɵelementEnd, Component, Output, ɵɵelement, ɵɵdefineNgModule, ɵɵdefineInjector, ɵɵsetNgModuleScope, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 class ParentpaymentService {
     constructor() { }
@@ -13,33 +12,6 @@ ParentpaymentService.ɵprov = ɵɵdefineInjectable({ token: ParentpaymentService
             }]
     }], function () { return []; }, null); })();
 
-function PaymentDetailsComponent_div_15_Template(rf, ctx) { if (rf & 1) {
-    const _r5 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 7);
-    ɵɵlistener("click", function PaymentDetailsComponent_div_15_Template_div_click_0_listener() { ɵɵrestoreView(_r5); const ctx_r4 = ɵɵnextContext(); return ctx_r4.paymentSelected(2); });
-    ɵɵelement(1, "input", 15);
-    ɵɵelementStart(2, "span", 9);
-    ɵɵtext(3, "Debit or credit card");
-    ɵɵelementEnd();
-    ɵɵelement(4, "img", 10);
-    ɵɵelementEnd();
-} }
-function PaymentDetailsComponent_lib_payment_bank_details_16_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelement(0, "lib-payment-bank-details");
-} }
-function PaymentDetailsComponent_lib_payment_card_details_17_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelement(0, "lib-payment-card-details");
-} }
-function PaymentDetailsComponent_div_23_Template(rf, ctx) { if (rf & 1) {
-    ɵɵelementStart(0, "div", 16);
-    ɵɵelementStart(1, "div", 17);
-    ɵɵtext(2, " Oops. Sorry, we are unable to process your payment. ");
-    ɵɵelementEnd();
-    ɵɵelementStart(3, "div", 18);
-    ɵɵtext(4, " An error has occurred while attempting to process your order. Please try again or try another payment method. ");
-    ɵɵelementEnd();
-    ɵɵelementEnd();
-} }
 class PaymentDetailsComponent {
     constructor() {
         this.paymentMethodType = 'Bank transfer';
@@ -52,119 +24,14 @@ class PaymentDetailsComponent {
     }
     ngOnInit() {
     }
-    canWalletPay() {
-        this.canDoWalletPay = false;
-        this.userData.isWalletPayEnabled = true;
-        if (this.userData.isStripeEnabled && this.userData.isWalletPayEnabled) {
-            //https://stripe.com/docs/js/initializing
-            const stripe = window.Stripe(atob(this.userData.pk_token), { stripeAccount: this.userData.stripeConnectedAccountId });
-            const paymentRequest = stripe.paymentRequest({
-                country: this.userData.clientDetails.countryNameCode,
-                currency: this.userData.currencyCode.toLowerCase(),
-                total: {
-                    label: 'Demo total',
-                    amount: 1,
-                },
-                requestPayerName: true,
-                requestPayerEmail: true,
-            });
-            (() => __awaiter(this, void 0, void 0, function* () {
-                // Check the availability of the Payment Request API first.
-                const result = yield paymentRequest.canMakePayment();
-                console.log('canMakePayment', result);
-                if (result) {
-                    this.canDoWalletPay = true;
-                    if (result.applePay) {
-                        this.walletPayDesc = 'Apple Pay';
-                        this.walletPayLogoName = 'ApplePay';
-                    }
-                    else if (result.googlePay) {
-                        this.walletPayDesc = 'Google Pay';
-                        this.walletPayLogoName = 'GooglePay';
-                    }
-                    else if (result.link) {
-                        this.walletPayDesc = 'Pay via Link';
-                        this.walletPayLogoName = 'LinkPay';
-                    }
-                    else {
-                        this.walletPayDesc = 'WalletPay';
-                        this.walletPayLogoName = 'Wallet';
-                    }
-                    console.log("Can make Wallet payments.");
-                }
-                else {
-                    console.log("Cannot make Wallet payments.");
-                }
-            }))();
-        }
-    }
-    paymentSelected(value) {
-        var temp = this.paymentMethod != value;
-        if (value > 0) {
-            this.paymentMethod = value;
-            this.emitter.emit(value);
-            var check = document.getElementById(value);
-            if (check) {
-                check.checked = true;
-            }
-            if (temp) {
-                this.payEmitter.emit(true);
-            }
-        }
-    }
 }
 PaymentDetailsComponent.ɵfac = function PaymentDetailsComponent_Factory(t) { return new (t || PaymentDetailsComponent)(); };
-PaymentDetailsComponent.ɵcmp = ɵɵdefineComponent({ type: PaymentDetailsComponent, selectors: [["lib-payment-details"]], outputs: { emitter: "emitter", payEmitter: "payEmitter" }, decls: 24, vars: 6, consts: [[1, "row", "pay-body"], [1, "pay-title-box"], [1, "pay-title"], [1, "pay-details"], [1, "pay-selection"], [1, "col", "pay-width"], [1, "row", "width-q"], [1, "col", "pay-btn", 3, "click"], ["type", "radio", "name", "payWith", "id", "1"], [1, "pay-btn-text"], ["src", "", "alt", "", 1, "icon-align"], ["class", "col pay-btn", 3, "click", 4, "ngIf"], [4, "ngIf"], ["type", "radio", "name", "payWith", "id", "3"], ["class", "row pay-body error-body", 4, "ngIf"], ["type", "radio", "name", "payWith", "id", "2"], [1, "row", "pay-body", "error-body"], [1, "error-title"], [1, "error-content"]], template: function PaymentDetailsComponent_Template(rf, ctx) { if (rf & 1) {
+PaymentDetailsComponent.ɵcmp = ɵɵdefineComponent({ type: PaymentDetailsComponent, selectors: [["lib-payment-details"]], outputs: { emitter: "emitter", payEmitter: "payEmitter" }, decls: 3, vars: 0, consts: [[1, "testing"]], template: function PaymentDetailsComponent_Template(rf, ctx) { if (rf & 1) {
         ɵɵelementStart(0, "div", 0);
-        ɵɵelementStart(1, "div", 1);
-        ɵɵelementStart(2, "div", 2);
-        ɵɵtext(3, "Payment details");
-        ɵɵelementEnd();
-        ɵɵelementStart(4, "div", 3);
-        ɵɵtext(5, "Please fill the information below about your payment method");
+        ɵɵelementStart(1, "span");
+        ɵɵtext(2, "testing paymeny apple");
         ɵɵelementEnd();
         ɵɵelementEnd();
-        ɵɵelementStart(6, "div", 4);
-        ɵɵelementStart(7, "div", 5);
-        ɵɵtext(8, "Pay with");
-        ɵɵelementEnd();
-        ɵɵelementStart(9, "div", 6);
-        ɵɵelementStart(10, "div", 7);
-        ɵɵlistener("click", function PaymentDetailsComponent_Template_div_click_10_listener() { return ctx.paymentSelected(1); });
-        ɵɵelement(11, "input", 8);
-        ɵɵelementStart(12, "span", 9);
-        ɵɵtext(13);
-        ɵɵelementEnd();
-        ɵɵelement(14, "img", 10);
-        ɵɵelementEnd();
-        ɵɵtemplate(15, PaymentDetailsComponent_div_15_Template, 5, 0, "div", 11);
-        ɵɵelementEnd();
-        ɵɵtemplate(16, PaymentDetailsComponent_lib_payment_bank_details_16_Template, 1, 0, "lib-payment-bank-details", 12);
-        ɵɵtemplate(17, PaymentDetailsComponent_lib_payment_card_details_17_Template, 1, 0, "lib-payment-card-details", 12);
-        ɵɵelementStart(18, "div", 7);
-        ɵɵlistener("click", function PaymentDetailsComponent_Template_div_click_18_listener() { return ctx.paymentSelected(3); });
-        ɵɵelement(19, "input", 13);
-        ɵɵelementStart(20, "span", 9);
-        ɵɵtext(21);
-        ɵɵelementEnd();
-        ɵɵelement(22, "img", 10);
-        ɵɵelementEnd();
-        ɵɵelementEnd();
-        ɵɵelementEnd();
-        ɵɵtemplate(23, PaymentDetailsComponent_div_23_Template, 5, 0, "div", 14);
-    } if (rf & 2) {
-        ɵɵadvance(13);
-        ɵɵtextInterpolate(ctx.paymentMethodType);
-        ɵɵadvance(2);
-        ɵɵproperty("ngIf", ctx.paymentMethodAllowed >= 2);
-        ɵɵadvance(1);
-        ɵɵproperty("ngIf", ctx.paymentMethod == "1");
-        ɵɵadvance(1);
-        ɵɵproperty("ngIf", ctx.paymentMethod == "2");
-        ɵɵadvance(4);
-        ɵɵtextInterpolate(ctx.walletPayDesc);
-        ɵɵadvance(2);
-        ɵɵproperty("ngIf", ctx.paymentMethod == 0);
     } }, styles: [".pay-body[_ngcontent-%COMP%]{border:1px solid var(--primaryBorderColor);box-shadow:0 4px 8px rgba(0,0,0,.04),0 0 2px rgba(0,0,0,.06),0 0 1px rgba(0,0,0,.04);border-radius:4px;margin:24px;overflow:hidden}.error-body[_ngcontent-%COMP%]{text-align:center;height:280px}.error-body[_ngcontent-%COMP%]   .error-title[_ngcontent-%COMP%]{font-weight:700;font-size:14px;line-height:20px;color:#f2994a;padding-top:120px;padding-bottom:12px}.error-body[_ngcontent-%COMP%]   .error-content[_ngcontent-%COMP%]{font-weight:400;font-size:12px;line-height:20px;color:var(--primaryTextColor)}.pay-title-box[_ngcontent-%COMP%]{background:var(--titleBarBackground);width:100%;padding:16px 24.5px}.pay-title[_ngcontent-%COMP%]{font-weight:700;font-size:16px;line-height:24px;color:var(--titleBarFontColor)}.pay-details[_ngcontent-%COMP%]{font-size:14px;line-height:20px;color:var(--titleBarSecondaryFontColour);padding-top:12px}.pay-selection[_ngcontent-%COMP%]{width:100%;padding:24px}.width-q[_ngcontent-%COMP%]{margin:0;gap:24px}.pay-width[_ngcontent-%COMP%]{font-weight:700;font-size:16px;padding-bottom:8px}.pay-btn[_ngcontent-%COMP%], .pay-width[_ngcontent-%COMP%]{color:var(--primaryTextColor)}.pay-btn[_ngcontent-%COMP%]{background:#fff;border:1px solid var(--primaryBorderColor);border-radius:4px;font-size:14px;display:flex;align-items:center;cursor:pointer;margin-bottom:0;padding-right:18px}.pay-btn-active[_ngcontent-%COMP%]{border:1px solid var(--secondaryButtonColour)}.pay-btn-text[_ngcontent-%COMP%]{font-size:14px;color:var(--primaryTextColor);padding:8px 8px 8px 16px;width:95%}.icon-align[_ngcontent-%COMP%]{width:20px;height:19px}.paymentCompleted[_ngcontent-%COMP%]{padding:0}@media (max-width:578px){.pay-body[_ngcontent-%COMP%]{border:none;box-shadow:none;margin:16px 0 0;border-radius:0}.pay-title-box[_ngcontent-%COMP%]{padding:22px 16px}.pay-selection[_ngcontent-%COMP%]{padding:16px}}@media (max-width:784px){.pay-btn[_ngcontent-%COMP%]{min-width:100%;padding-right:16px;padding-left:12px}.width-q[_ngcontent-%COMP%]{gap:12px}.pay-width[_ngcontent-%COMP%]{padding-bottom:12px}.pay-details[_ngcontent-%COMP%]{padding-top:8px}}"] });
 (function () { (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassMetadata(PaymentDetailsComponent, [{
         type: Component,

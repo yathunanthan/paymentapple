@@ -38,24 +38,6 @@
                     }]
             }], ctorParameters: function () { return []; } });
 
-    var ParentpaymentComponent = /** @class */ (function () {
-        function ParentpaymentComponent() {
-        }
-        ParentpaymentComponent.prototype.ngOnInit = function () {
-        };
-        return ParentpaymentComponent;
-    }());
-    ParentpaymentComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0__namespace, type: ParentpaymentComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
-    ParentpaymentComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.17", type: ParentpaymentComponent, selector: "lib-parentpayment", ngImport: i0__namespace, template: "\n    <p>\n      parentpayment works!\n    </p>\n  ", isInline: true });
-    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0__namespace, type: ParentpaymentComponent, decorators: [{
-                type: i0.Component,
-                args: [{
-                        selector: 'lib-parentpayment',
-                        template: "\n    <p>\n      parentpayment works!\n    </p>\n  ",
-                        styles: []
-                    }]
-            }], ctorParameters: function () { return []; } });
-
     var ApplypayComponent = /** @class */ (function () {
         function ApplypayComponent() {
         }
@@ -71,6 +53,24 @@
                         selector: 'lib-applypay',
                         templateUrl: './applypay.component.html',
                         styleUrls: ['./applypay.component.css']
+                    }]
+            }], ctorParameters: function () { return []; } });
+
+    var ParentpaymentComponent = /** @class */ (function () {
+        function ParentpaymentComponent() {
+        }
+        ParentpaymentComponent.prototype.ngOnInit = function () {
+        };
+        return ParentpaymentComponent;
+    }());
+    ParentpaymentComponent.ɵfac = i0__namespace.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0__namespace, type: ParentpaymentComponent, deps: [], target: i0__namespace.ɵɵFactoryTarget.Component });
+    ParentpaymentComponent.ɵcmp = i0__namespace.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.17", type: ParentpaymentComponent, selector: "lib-parentpayment", ngImport: i0__namespace, template: "\n<lib-applypay></lib-applypay>\n  ", isInline: true, components: [{ type: ApplypayComponent, selector: "lib-applypay" }] });
+    i0__namespace.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0__namespace, type: ParentpaymentComponent, decorators: [{
+                type: i0.Component,
+                args: [{
+                        selector: 'lib-parentpayment',
+                        template: "\n<lib-applypay></lib-applypay>\n  ",
+                        styles: []
                     }]
             }], ctorParameters: function () { return []; } });
 

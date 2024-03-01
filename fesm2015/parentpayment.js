@@ -13,30 +13,6 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.17", ngImpo
                 }]
         }], ctorParameters: function () { return []; } });
 
-class ParentpaymentComponent {
-    constructor() { }
-    ngOnInit() {
-    }
-}
-ParentpaymentComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0, type: ParentpaymentComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-ParentpaymentComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.17", type: ParentpaymentComponent, selector: "lib-parentpayment", ngImport: i0, template: `
-    <p>
-      parentpayment works!
-    </p>
-  `, isInline: true });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0, type: ParentpaymentComponent, decorators: [{
-            type: Component,
-            args: [{
-                    selector: 'lib-parentpayment',
-                    template: `
-    <p>
-      parentpayment works!
-    </p>
-  `,
-                    styles: []
-                }]
-        }], ctorParameters: function () { return []; } });
-
 class ApplypayComponent {
     constructor() { }
     ngOnInit() {
@@ -50,6 +26,26 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.17", ngImpo
                     selector: 'lib-applypay',
                     templateUrl: './applypay.component.html',
                     styleUrls: ['./applypay.component.css']
+                }]
+        }], ctorParameters: function () { return []; } });
+
+class ParentpaymentComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+ParentpaymentComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0, type: ParentpaymentComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
+ParentpaymentComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.2.17", type: ParentpaymentComponent, selector: "lib-parentpayment", ngImport: i0, template: `
+<lib-applypay></lib-applypay>
+  `, isInline: true, components: [{ type: ApplypayComponent, selector: "lib-applypay" }] });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.2.17", ngImport: i0, type: ParentpaymentComponent, decorators: [{
+            type: Component,
+            args: [{
+                    selector: 'lib-parentpayment',
+                    template: `
+<lib-applypay></lib-applypay>
+  `,
+                    styles: []
                 }]
         }], ctorParameters: function () { return []; } });
 
